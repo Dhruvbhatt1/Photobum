@@ -1,0 +1,99 @@
+.Title {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    // margin-bottom: 2em;
+    color: #fff;
+    margin-bottom: 1rem;
+    // .buttons{
+    //     .buttonlogin{
+    //         border-color: rgb(8,11,50);
+    //         color: black;
+    //         &:hover{
+    //             background-color: rgb(8,11,50);
+    //             color: white;
+    //           }
+    //           &.is-active{
+    //             background-color: rgb(8,11,50);
+    //             color: white;
+    //           }
+    //     }
+    // }
+}
+.heading{
+    justify-content: flex-end;
+    flex: 2;
+    display: flex;
+    align-self: center;
+    margin-right: 10%;
+}
+.buttons{
+    flex: 2;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: flex-end;
+    width: 100%;
+}
+.editprofilebtn{
+    background-color: transparent;
+    color: white;
+    margin-left: 0px;
+    border-radius: 25px;
+    border: 2px solid white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    >*{
+        margin-left: 4.5px;
+        margin-top: 2.5px;
+    }
+}
+.editbtn-container{
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    height: 5vh;
+    width: 100%;
+    flex: 1;
+}
+.signoutbtn{
+    background-color: transparent;
+    color: white;
+    margin-right: 0.125rem;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+
+
+
+
+
+
+
+
+
+
+//here
+
+// .sidebar-mask{
+//     flex: 5;
+//     background-color: transparent;
+//   }
+//   .sidebar-group{
+//     height: 100vh;
+//     width: 100vw;
+//     background-color: transparent;
+//     position: fixed;
+//     display: flex;
+//   }
