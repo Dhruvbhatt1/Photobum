@@ -1,0 +1,214 @@
+@import "./pages/loginpage.scss";
+@import "./pages/TodoList.scss";
+@import "./pages/photoalbum.scss";
+
+body {
+  margin: 0;
+  padding: 0 !important;
+  background-color: whitesmoke;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #c54245;
+  overflow: hidden;
+}
+
+.snowflakes {
+  width: 100vw;
+  height: 1200px;
+  position: absolute;
+  top: -170px; 
+  left: 0;
+  z-index: -1;
+}
+
+.snowflakes i, .snowflakes i:after, .snowflakes i:before { background: white; }
+.snowflakes i {
+  display: inline-block;
+  animation: snowflakes 5s linear infinite;
+  position: relative;
+}
+.snowflakes i:after, .snowflakes i:before {
+  height: 100%;
+  width: 100%;
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: rotate(120deg);
+}
+.snowflakes i:before { transform: rotate(240deg); }
+
+@keyframes snowflakes {
+  0% {
+    transform: translate3d(0,0,0) rotate(0deg) scale(0.6);
+  }
+  100% {
+    transform: translate3d(15px, 1200px, 0px) rotate(360deg) scale(0.6);
+  };
+}
+
+.snowflakes i:nth-child(3n) {
+  width: 16px; height: 4px;
+  animation-duration: 12s;
+  animation-iteration-count: 30;
+  transform-origin: right -45px;
+}
+
+.snowflakes i:nth-child(3n+1) {
+  width: 24px; height: 6px;
+  animation-duration: 16s;
+  animation-iteration-count: 45;
+  transform-origin: right -30px;
+}
+
+.snowflakes i:nth-child(3n+2) {
+  width: 32px; height: 8px;
+  animation-duration: 20s;
+  animation-iteration-count: 60;
+  transform-origin: right -15px;
+}
+  
+/* different delays so they don't all start at the same time */
+.snowflakes i:nth-child(7n) {
+  opacity:.3;
+  animation-delay: 0s;
+  animation-timing-function:ease-in;
+}
+.snowflakes i:nth-child(7n+1) {
+  opacity:.4;
+  animation-delay: 0.25s;
+  animation-timing-function:ease-out;
+}
+.snowflakes i:nth-child(7n+2) {
+  opacity:.5;
+  animation-delay: 0.5s;
+  animation-timing-function:linear;
+}
+.snowflakes i:nth-child(7n+3) {
+  opacity:.6;
+  animation-delay: 1s;
+  animation-timing-function:ease-in;
+}
+.snowflakes i:nth-child(7n+4) {
+  opacity:.7;
+  animation-delay: 1.5s;
+  animation-timing-function:linear;
+}
+.snowflakes i:nth-child(7n+5) {
+  opacity:.8;
+  animation-delay: 2s;
+  animation-timing-function:ease-out;
+}
+.snowflakes i:nth-child(7n+6) {
+  opacity:.9;
+  animation-delay: 2.5s;
+  animation-timing-function:ease-in;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+
+$globe-width:   12px;
+$globe-height:  28px;
+$globe-spacing: 40px;
+$globe-spread: 3px;
+$light-off-opacity: 0.4;
+
+.lightrope {
+  z-index: -1 !important;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  margin: -15px 0 0 0;
+  padding: 0;
+  pointer-events: none;
+  width: 100%;
+  li {
+    position: relative;
+    animation-fill-mode: both; 
+    animation-iteration-count:infinite;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: $globe-width;
+    height: $globe-height;
+    border-radius: 50%;
+    margin: $globe-spacing/2;
+    display: inline-block;
+    background: rgb(0, 255, 115);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgb(0, 255, 115,1);
+    animation-name: flash-1;
+    animation-duration: 2s;
+    &:nth-child(2n+1) {
+      background: rgba(0,255,255,1);
+      box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,0.5);
+      animation-name: flash-2;
+      animation-duration: 0.4s;
+    }
+    &:nth-child(4n+2) {
+      background: rgb(193, 165, 32);
+      box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgb(193, 165, 32, 1);
+      animation-name: flash-3;
+      animation-duration: 1.1s;
+    }
+    &:nth-child(odd) {
+      animation-duration: 1.8s;
+    }
+    &:nth-child(3n+1) {
+      animation-duration: 1.4s;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      background: #222;
+      width: ($globe-width - 2);
+      height: $globe-height/3;
+      border-radius: 3px;
+      top: (0 - ($globe-height/6));
+      left: 1px;
+    }
+    &:after {
+      content: "";
+      top: (0 - $globe-height/2);
+      left: $globe-width - 3;
+      position: absolute;
+      width: $globe-spacing + 12;
+      height: ($globe-height/3 * 2);
+      border-bottom: solid #222 2px;
+      border-radius: 50%;
+    }
+    &:last-child:after {
+      content: none;
+    }
+    &:first-child {
+      margin-left: -$globe-spacing;
+    }
+  }
+}
+@keyframes flash-1 { 
+    0%, 100% { background: rgb(0, 255, 115);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgb(0, 255, 115,1);} 
+    50% { background: rgb(0, 255, 115,$light-off-opacity);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgb(0, 255, 115,0.2);}
+}
+@keyframes flash-2 { 
+    0%, 100% { background: rgba(0,255,255,1);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,1);} 
+    50% { background: rgba(0,255,255,$light-off-opacity);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,0.2);}
+}
+@keyframes flash-3 { 
+    0%, 100% { background: rgb(193, 165, 32);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgb(193, 165, 32);} 
+    50% { background: rgb(193, 165, 32, $light-off-opacity);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgb(193, 165, 32, 0.2);}
+}
